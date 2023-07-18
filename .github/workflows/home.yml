@@ -1,0 +1,4 @@
+name: 'homemod'
+
+on: workflow_dispatch
+
