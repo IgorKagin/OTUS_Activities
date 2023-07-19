@@ -9,17 +9,20 @@ project( ${PROJECT_NAME} VERSION ${PROJECT_VERSION})
 
 set( SOURCES
   src/ip_filter.cpp
-  src/main.cpp
 )
 
 set( HEADERS
   include/ip_filter.h
 )
 
-add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
+add_executable( ${PROJECT_NAME} src/main.cpp )
+add_library(ip_filter_lib ${SOURCES} ${HEADERS})
 
 include_directories(include)
 
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    ip_filter_lib
+)
 set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
