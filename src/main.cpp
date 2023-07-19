@@ -20,7 +20,7 @@ std::vector<std::string> split( const std::string& str, const char d )
 }
 
 
-int main( int argc, char const*argv[] )
+int main( int, char ** )
 {
   try
   {
