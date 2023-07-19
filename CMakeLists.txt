@@ -18,6 +18,8 @@ set( HEADERS
 
 add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
 
+include_directories(include)
+
 set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
