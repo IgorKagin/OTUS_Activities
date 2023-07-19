@@ -18,7 +18,7 @@ set( HEADERS
 add_executable( ip_filter_cli src/main.cpp )
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-target_include_directories(${PROJECT_NAME} include)
+target_include_directories(ip_filter PRIVATE include)
 
 target_link_libraries(ip_filter_cli PRIVATE
     ip_filter
