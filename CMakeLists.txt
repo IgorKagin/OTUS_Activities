@@ -12,8 +12,8 @@ set( SOURCES
   src/main.cpp
 )
 
-set(HEADERS
-include/ip_filter.h
+set( HEADERS
+  include/ip_filter.h
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
