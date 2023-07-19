@@ -23,6 +23,8 @@ jobs:
           draft: false
           prerelease: false
       - run: ls -ls
+      - run: find /home -name *.deb
+      - run: find /home -name ip_filter
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
