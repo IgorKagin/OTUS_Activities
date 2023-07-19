@@ -23,7 +23,7 @@ include_directories(include)
 target_link_libraries(ip_filter_cli PRIVATE
     ip_filter
 )
-set_target_properties(ip_filter_cli PROPERTIES
+set_target_properties(ip_filter_cli ip_filter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
