@@ -15,12 +15,12 @@ set( HEADERS
   include/ip_filter.h
 )
 
-add_executable( ${PROJECT_NAME} src/main.cpp )
+add_executable( ip_filter_cli src/main.cpp )
 add_library(ip_filter_lib ${SOURCES} ${HEADERS})
 
 include_directories(include)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE
+target_link_libraries(ip_filter_cli PRIVATE
     ip_filter_lib
 )
 set_target_properties(ip_filter PROPERTIES
@@ -33,17 +33,23 @@ target_include_directories(ip_filter
 )
 
 if (MSVC)
-    target_compile_options(ip_filter PRIVATE
+    target_compile_options(ip_filter_cli PRIVATE
+        /W4
+    )
+        target_compile_options(ip_filter_lib PRIVATE
         /W4
     )
 else ()
-    target_compile_options(ip_filter PRIVATE
+    target_compile_options(ip_filter_cli PRIVATE
+        -Wall -Wextra -pedantic -Werror
+    )
+        target_compile_options(ip_filter_lib PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 
 endif()
 
-install(TARGETS ip_filter RUNTIME DESTINATION bin)
+install(TARGETS ip_filter_cli RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
