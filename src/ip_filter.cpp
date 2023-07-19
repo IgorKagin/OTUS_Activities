@@ -85,7 +85,7 @@ void IPHandler::PrintIp( const unsigned& arg1, const unsigned& arg2 ) const noex
   cout << "-----IP-----" << endl;
   for ( const auto& vector : m_unsignedPool )
   {
-    if ( vector.at( 0 ) == arg1 & vector.at( 1 ) == arg2 )
+    if ( ( vector.at( 0 ) == arg1 ) & vector.at( 1 ) == arg2 )
     {
       Printer( vector );
     }
@@ -104,7 +104,7 @@ void IPHandler::PrintIp( const unsigned& arg1, const unsigned& arg2, const unsig
   cout << "-----IP-----" << endl;
   for ( const auto& vector : m_unsignedPool )
   {
-    if ( vector.at( 0 ) == arg1 & vector.at( 1 ) == arg2 & vector.at( 2 ) == arg3 )
+    if ( ( vector.at( 0 ) == arg1 ) & vector.at( 1 ) == arg2 & ( vector.at( 2 ) == arg3 ) )
     {
       Printer( vector );
     }
@@ -123,7 +123,7 @@ void IPHandler::PrintIp( const unsigned& arg, const unsigned& arg1, const unsign
   cout << "-----IP-----" << endl;
   for ( const auto& vector : m_unsignedPool )
   {
-    if ( vector.at( 0 ) == arg & vector.at( 1 ) == arg1 & vector.at( 2 ) == arg2 & vector.at( 3 ) == arg3 )
+    if ( ( vector.at( 0 ) == arg ) &  vector.at( 1 ) == arg1  & ( vector.at( 2 ) == arg2) & ( vector.at( 3 ) == arg3 ) )
     {
       Printer( vector );
     }
