@@ -16,7 +16,7 @@ set( HEADERS
   include/ip_filter.h
 )
 
-add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} )
+add_executable( ${PROJECT_NAME} ${SOURCES} include/ip_filter.h )
 
 set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 14
