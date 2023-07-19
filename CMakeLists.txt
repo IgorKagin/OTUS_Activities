@@ -36,14 +36,14 @@ if (MSVC)
     target_compile_options(ip_filter_cli PRIVATE
         /W4
     )
-        target_compile_options(ip_filter PRIVATE
+    target_compile_options(ip_filter PRIVATE
         /W4
     )
 else ()
     target_compile_options(ip_filter_cli PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-        target_compile_options(ip_filter PRIVATE
+    target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 
