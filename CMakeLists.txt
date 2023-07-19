@@ -16,14 +16,14 @@ set( HEADERS
 )
 
 add_executable( ip_filter_cli src/main.cpp )
-add_library(ip_filter_lib ${SOURCES} ${HEADERS})
+add_library(ip_filter ${SOURCES} ${HEADERS})
 
 include_directories(include)
 
 target_link_libraries(ip_filter_cli PRIVATE
-    ip_filter_lib
+    ip_filter
 )
-set_target_properties(ip_filter PROPERTIES
+set_target_properties(ip_filter_cli PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
@@ -36,14 +36,14 @@ if (MSVC)
     target_compile_options(ip_filter_cli PRIVATE
         /W4
     )
-        target_compile_options(ip_filter_lib PRIVATE
+        target_compile_options(ip_filter PRIVATE
         /W4
     )
 else ()
     target_compile_options(ip_filter_cli PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-        target_compile_options(ip_filter_lib PRIVATE
+        target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 
