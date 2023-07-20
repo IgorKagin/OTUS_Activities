@@ -7,6 +7,8 @@ set( PROJECT_NAME ip_filter)
 
 project( ${PROJECT_NAME} VERSION ${PROJECT_VERSION})
 
+configure_file(version.h.in version.h)
+
 set( SOURCES
   src/ip_filter.cpp
 )
