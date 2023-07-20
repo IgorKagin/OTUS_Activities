@@ -11,6 +11,7 @@ jobs:
           submodules: true
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
+      - run: cmake --build . --target
       - run: ls -ls
       - name: Create Release
         id: create_release
@@ -22,9 +23,9 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
-      - run: ls -ls
       - run: sudo find /home -name *.deb
       - run: sudo find /home -name ip_filter
+      - run: ls -ls  /usr/bin/bash
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
